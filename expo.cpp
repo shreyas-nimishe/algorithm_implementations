@@ -19,6 +19,9 @@ ll expo(ll a, ll exp, ll mod) {
 }
 
 int main() {
-	printf("(41^12) mod 2344 = %lld\n",expo(41, 12, 2344));
+	ll A, B, C;
+	printf("\nThis Program Computes (A^B) mod C \n\nEnter A, B & C: ");
+	scanf("%lld%lld%lld",&A,&B,&C);
+	printf("Reult: %lld\n", expo(A, B, C));
 	return 0;
 }
