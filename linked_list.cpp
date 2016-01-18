@@ -9,7 +9,7 @@ struct node {
 struct node *create_node() {
 	struct node *temp = (struct node *) malloc (sizeof(node));
 	temp->next = NULL;
-
+	temp->data = 0;
 	return temp;
 }
 
@@ -53,7 +53,7 @@ void printlist(struct node *cur_node) {
 int main() {
 	 /* Start with the empty list */
     struct node* head = NULL;
- 
+ 	
     push(&head, 34);
     push(&head, 56);
     push(&head, 345);
