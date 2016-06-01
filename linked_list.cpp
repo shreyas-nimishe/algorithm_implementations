@@ -13,6 +13,17 @@ struct node *create_node() {
 	return temp;
 }
 
+void find_lenght(struct node **head_ref) {
+
+	int len = 0;
+	struct node temp = (*head_ref)
+	while(temp != NULL) {
+		temp = temp->next;
+		len += 1;
+	}
+	return len;
+}
+
 void push(struct node **head_ref, int val) {
 	struct node *temp = create_node();
 	temp->data = val;
