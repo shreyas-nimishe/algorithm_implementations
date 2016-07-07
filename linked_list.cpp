@@ -13,10 +13,10 @@ struct node *create_node() {
 	return temp;
 }
 
-void find_lenght(struct node **head_ref) {
+int find_lenght(struct node **head_ref) {
 
 	int len = 0;
-	struct node temp = (*head_ref)
+	struct node *temp = (*head_ref);
 	while(temp != NULL) {
 		temp = temp->next;
 		len += 1;
@@ -24,13 +24,35 @@ void find_lenght(struct node **head_ref) {
 	return len;
 }
 
+void reverse_list(struct node **head_ref) {
+	struct node *prev = *head_ref, *cur_node = create_node(), *next_node = create_node();
+
+	if(prev == NULL) {
+		return;
+	}else if(prev->next == NULL) {
+		return;
+	}
+
+	cur_node = prev->next;
+
+	while(cur_node != NULL) {
+		printf("val = %d ",cur_node->data );
+		next_node = cur_node->next;
+
+		cur_node->next = prev;
+		prev = cur_node;
+		cur_node = next_node;
+	}
+	(*head_ref) = cur_node;
+}
+
+
 void push(struct node **head_ref, int val) {
 	struct node *temp = create_node();
 	temp->data = val;
 	temp->next = (*head_ref);
 	(*head_ref) = temp;
 }
-
 
 void delete_node(struct node **head_ref, int key) {
 	struct node *cur_node = *head_ref, *prev = *head_ref;
@@ -76,6 +98,9 @@ int main() {
 
     delete_node(&head, 245);
     printf("deleted node with value 245\n");
+    printlist(head);
+    printf("\nReverse List \n");
+    reverse_list(&head);
     printlist(head);
     return 0;
 }

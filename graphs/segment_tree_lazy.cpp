@@ -11,6 +11,7 @@ void build(int node_lower, int node_upper, int node_idx) {
 	if(node_upper == node_lower){
 		segment[node_idx] = array[node_lower];
 	}
+	
 	int mid = (node_upper + node_lower) / 2;
 	build(node_lower, mid, 2*node_idx);			// tree is one based i.e indexing begins from 1
 	build(mid + 1, node_upper, 2*node_idx + 1);

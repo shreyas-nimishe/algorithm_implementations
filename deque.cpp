@@ -15,7 +15,7 @@ struct deque_node {
 
 struct node *createnode() {
 	struct node *temp = (struct node *)malloc(sizeof(node));
-	temp->data = 0;
+	temp->data = 0;		// not required 
 	temp->next = temp->prev = NULL;
 	return temp;
 }
