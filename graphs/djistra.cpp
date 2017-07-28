@@ -24,7 +24,7 @@ int main() {
 	cin >> src ;
 	min_dist[src] = 0;
 	
-	priority_queue<pii, vector< pii >, greater< pii > > pq;
+	priority_queue<pii, vector< pii >, greater< pii > > pq;    // IMPORTANT 
 
 	pq.push(make_pair(min_dist[src], src));
 

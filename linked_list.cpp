@@ -27,9 +27,7 @@ int find_lenght(struct node **head_ref) {
 void reverse_list(struct node **head_ref) {
 	struct node *prev = *head_ref, *cur_node = create_node(), *next_node = create_node();
 
-	if(prev == NULL) {
-		return;
-	}else if(prev->next == NULL) {
+	if(prev == NULL || prev->next == NULL) {
 		return;
 	}
 
